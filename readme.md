@@ -1,8 +1,33 @@
+<table align="center">
+    <tr>
+        <td align="center" width="25%">
+            <img src="https://vignette.wikia.nocookie.net/megaman/images/2/22/Cutman.png" alt="MegaMan Bosses API">
+        </td>
+        <td align="center" width="75%">
+          
 # MegaMan Bosses API
+          
+[![Latest release](https://img.shields.io/github/v/release/felipeAguiarCode/MegaApiDotnetCore)](https://github.com/felipeAguiarCode/MegaApiDotnetCore/releases/latest)
+  <br>
+        </td>
+    </tr>
+</table>
 
-## Contexto
+<p align="center">
+  Este projeto é uma API feita em .NET para listar os dados dos bosses de MegaMan. O objetivo principal é ser um backend que fornece JSONs no formato especificado abaixo.
+  <br />
+</p>
+<p align="center">
+  Guides e documentação podem ser encontrados na <a href="https://github.com/seu-usuario/seu-repositorio/wiki">Wiki tab</a>.
+</p>
 
-Este projeto é uma API feita em .NET para listar os dados dos bosses de MegaMan. O objetivo principal é ser um backend que fornece JSONs no formato especificado abaixo.
+<p align="center">
+    <img src="_docs\assets\icon.png">
+</p>
+
+## Uso
+
+Para executar esta API, seu PC deve estar equipado com o .NET Core SDK 3.1 ou superior e Visual Studio ou qualquer editor de código de sua preferência.
 
 ## Estrutura do JSON
 
@@ -18,71 +43,30 @@ A API fornecerá dados no seguinte formato:
 }
 ```
 
-## Especificações do Projeto
+## Última versão
 
-```xml
-<Project Sdk="Microsoft.NET.Sdk.Web">
+Versões estáveis são lançadas periodicamente, com base no branch `master`, para garantir uma experiência mais estável e agradável.
 
-  <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
-  </PropertyGroup>
+Você pode encontrar a última versão estável [aqui](https://github.com/seu-usuario/seu-repositorio/releases/latest).
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.8" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.8">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.8" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
-  </ItemGroup>
+Versões Canary são compiladas automaticamente para cada commit no branch `master`. Essas versões podem ser instáveis ou completamente quebradas e são recomendadas apenas para usuários experientes.
 
-</Project>
-```
+Você pode encontrar a última versão canary [aqui](https://github.com/seu-usuario/Canary-Releases/releases/latest).
 
-## Endpoints do Projeto
+## Endpoints
 
-### Listar todos os bosses
+| Método | URL                      | Descrição                    | Respostas           |
+|--------|--------------------------|------------------------------|---------------------|
+| GET    | `/api/v1/robots`         | Listar todos os bosses       | 200 OK              |
+| GET    | `/api/v1/robots/{id}`    | Obter boss por ID            | 200 OK, 404 Not Found |
+| POST   | `/api/v1/robots`         | Criar um novo boss           | 200 OK              |
 
-- **URL:** `/api/v1/robots`
-- **Método:** `GET`
-- **Resposta de Sucesso:** `200 OK`
+## Técnicas Utilizadas
 
-```json
-[
-  {
-    "Id": 1,
-    "Code": "DLN/DRN-003",
-    "Name": "Cutman",
-    "HP": 150,
-    "Picture": "https://vignette.wikia.nocookie.net/megaman/images/2/22/Cutman.png"
-  },
-  ...
-]
-```
-
-### Obter boss por ID
-
-- **URL:** `/api/v1/robots/{id}`
-- **Método:** `GET`
-- **Resposta de Sucesso:** `200 OK`
-- **Resposta de Erro:** `404 Not Found`
-
-```json
-{
-  "Id": 1,
-  "Code": "DLN/DRN-003",
-  "Name": "Cutman",
-  "HP": 150,
-  "Picture": "https://vignette.wikia.nocookie.net/megaman/images/2/22/Cutman.png"
-}
-```
-
-### Criar um novo boss
-
-- **URL:** `/api/v1/robots`
-- **Método:** `POST`
-- **Resposta de Sucesso:** `200 OK`
+- **ASP.NET Core:** Utilizado para construir a API.
+- **Entity Framework Core:** Utilizado para interações com o banco de dados.
+- **Newtonsoft.Json:** Utilizado para serialização e desserialização de JSON.
+- **Dependency Injection:** Implementado para gerenciar as dependências do projeto.
 
 ## Dependências
 
@@ -119,46 +103,13 @@ Program.cs
 Startup.cs
 ```
 
-## Técnicas Utilizadas
+## Documentação
 
-- **ASP.NET Core:** Utilizado para construir a API.
-- **Entity Framework Core:** Utilizado para interações com o banco de dados.
-- **Newtonsoft.Json:** Utilizado para serialização e desserialização de JSON.
-- **Dependency Injection:** Implementado para gerenciar as dependências do projeto.
-
-## Como utilizar
-
-### Pré-requisitos
-
-- .NET Core SDK 3.1 ou superior
-- Visual Studio ou qualquer editor de código de sua preferência
-
-### Passos para execução
-
-1. Clone este repositório:
-   ```sh
-   git clone https://github.com/seu-usuario/seu-repositorio.git
-   ```
-
-2. Navegue até o diretório do projeto:
-   ```sh
-   cd seu-repositorio
-   ```
-
-3. Restaure as dependências do projeto:
-   ```sh
-   dotnet restore
-   ```
-
-4. Execute a aplicação:
-   ```sh
-   dotnet run
-   ```
-
-## Contribuições
-
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull requests.
+Se você está planejando contribuir ou apenas quer aprender mais sobre este projeto, por favor leia nossa [documentação](docs/README.md).
 
 ## Licença
 
 Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+⌨️ FelipeAguiar -
+[Github](https://github.com/felipeAguiarCode)
